@@ -16,7 +16,7 @@ import com.leatien.lepaikt.common.functions.Action1
 import com.leatien.lepaikt.common.utils.TimeUtils
 import kotlinx.android.synthetic.main.item_product_detail_view.view.*
 
-class ProductDetailAdapter(val context:Context, private val pageFlag: Int, var callBack: Action1<Long>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class ProductDetailAdapter(val context:Context, private val pageFlag: Int, private var callBack: Action1<Long>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     companion object {
         const val ITEM_VIEW = 1
         const val BOTTOM_VIEW = 2

@@ -1,12 +1,19 @@
 package com.leatien.lepaikt.business.activity
 
+import android.graphics.Rect
+import android.os.Build
 import android.os.Bundle
 import android.support.v4.view.ViewPager
+import android.support.v7.widget.LinearLayoutManager
+import android.view.View
+import android.view.ViewGroup
 import com.leatien.lepaikt.R
+import com.leatien.lepaikt.adapter.ProductBidRecordAdapter
 import com.leatien.lepaikt.base.view.BaseMvpActivity
 import com.leatien.lepaikt.common.GlideImageLoaderEntity
 import com.youth.banner.BannerConfig
 import kotlinx.android.synthetic.main.activity_product_is_auction_detail.*
+
 /**
  * Created by oyh on 2018/12/29
  * 商品详情
@@ -46,5 +53,65 @@ class ProductIsAuctionDetailActivity : BaseMvpActivity(), ProductIsAuctionDetail
         product_detail_banner.start()
 
         tv_countdown.initTime(1,20,50)
+
+        rcy_bid_record.layoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
+        rcy_bid_record.adapter = ProductBidRecordAdapter(this)
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            scoll_view.setOnScrollChangeListener { v, scrollX, scrollY, oldScrollX, oldScrollY ->
+                if (isViewCovered(tv_product_price)) conlyt_current_price_view.visibility = View.VISIBLE
+                else conlyt_current_price_view.visibility = View.GONE
+            }
+        }
+    }
+
+    /**
+     * 判断指定的view是否在屏幕内显示
+     * @param view 指定的view
+     * @return 是否显示
+     */
+    fun isViewCovered(view: View): Boolean {
+        var currentView = view
+
+        val currentViewRect = Rect()
+        val partVisible = currentView.getGlobalVisibleRect(currentViewRect)
+        val totalHeightVisible = currentViewRect.bottom - currentViewRect.top >= view.measuredHeight
+        val totalWidthVisible = currentViewRect.right - currentViewRect.left >= view.measuredWidth
+        val totalViewVisible = partVisible && totalHeightVisible && totalWidthVisible
+        // if any part of the view is clipped by any of its parents,return true
+        if (!totalViewVisible)
+            return true
+
+        while (currentView.parent is ViewGroup) {
+            val currentParent = currentView.parent as ViewGroup
+            // if the parent of view is not visible,return true
+            if (currentParent.visibility != View.VISIBLE)
+                return true
+
+            val start = indexOfViewInParent(currentView, currentParent)
+            for (i in start + 1 until currentParent.childCount) {
+                val viewRect = Rect()
+                view.getGlobalVisibleRect(viewRect)
+                val otherView = currentParent.getChildAt(i)
+                val otherViewRect = Rect()
+                otherView.getGlobalVisibleRect(otherViewRect)
+                // if view intersects its older brother(covered),return true
+                if (Rect.intersects(viewRect, otherViewRect))
+                    return true
+            }
+            currentView = currentParent
+        }
+        return false
+    }
+
+    private fun indexOfViewInParent(view: View, parent: ViewGroup): Int {
+        var index: Int
+        index = 0
+        while (index < parent.childCount) {
+            if (parent.getChildAt(index) === view)
+                break
+            index++
+        }
+        return index
     }
 }

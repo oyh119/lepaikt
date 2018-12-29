@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_gravity="center_horizontal"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:background="@drawable/shape_base_btn_bg"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/tv_item_first"
+            android:paddingTop="4dp"
+            android:text="@string/home_page_tips"
+            android:gravity="center"
+            android:drawableTop="@mipmap/ico_home_select"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/tv_item_second"
+            android:paddingTop="4dp"
+            android:text="@string/order_tips"
+            android:gravity="center"
+            android:drawableTop="@mipmap/ico_speech_unselect"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/tv_item_third"
+            android:paddingTop="2dp"
+            android:text="@string/personal_center"
+            android:gravity="center"
+            android:drawableTop="@mipmap/ico_more_unselect"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tv_item_four"
+        android:paddingTop="4dp"
+        android:background="@drawable/shape_base_btn_bg"
+        android:text="@string/share"
+        android:gravity="center"
+        android:layout_marginLeft="20dp"
+        android:drawableTop="@mipmap/ico_share_select"
+        android:textColor="@color/ffffff"
+        android:layout_width="60dp"
+        android:layout_height="match_parent" />
+</LinearLayout>

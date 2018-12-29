@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CommonItemView">
+        <attr name="defaultItem" format="integer"/>
+    </declare-styleable>
+    <declare-styleable name="BaseBottomView">
+        <attr name="firstSelectIcon" format="reference"/>
+        <attr name="firstUnSelectIcon" format="reference"/>
+        <attr name="secondSelectIcon" format="reference"/>
+        <attr name="secondUnSelectIcon" format="reference"/>
+        <attr name="thirdSelectIcon" format="reference"/>
+        <attr name="thirdUnSelectIcon" format="reference"/>
+        <attr name="fourSelectIcon" format="reference"/>
+        <attr name="fourUnSelectIcon" format="reference"/>
+        <attr name="defaultIcon" format="integer"/>
+        <attr name="selectColor" format="reference"/>
+        <attr name="unSelectColor" format="reference"/>
+    </declare-styleable>
+    <declare-styleable name="StickyScrollView">
+        <attr name="stuckShadowHeight" format="dimension" />
+        <attr name="stuckShadowDrawable" format="reference" />
+    </declare-styleable>
+</resources>

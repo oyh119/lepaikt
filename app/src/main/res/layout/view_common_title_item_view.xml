@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/ffffff"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="76dp">
+    <TextView
+        android:id="@+id/tv_is_auction"
+        android:paddingTop="10dp"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:textColor="@color/c272936"
+        android:drawableTop="@mipmap/ico_is_auction"
+        android:text="@string/is_auction"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent" />
+    <TextView
+        android:id="@+id/tv_is_out"
+        android:paddingTop="10dp"
+        android:textSize="12sp"
+        android:textColor="@color/c272936"
+        android:gravity="center"
+        android:drawableTop="@mipmap/ico_is_out"
+        android:text="@string/is_out"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent" />
+    <TextView
+        android:id="@+id/tv_the_payment"
+        android:paddingTop="10dp"
+        android:textSize="12sp"
+        android:textColor="@color/c272936"
+        android:gravity="center"
+        android:drawableTop="@mipmap/ico_for_the_payment"
+        android:text="@string/for_the_payment"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent" />
+    <TextView
+        android:id="@+id/tv_the_goods"
+        android:paddingTop="10dp"
+        android:textSize="12sp"
+        android:textColor="@color/c272936"
+        android:gravity="center"
+        android:drawableTop="@mipmap/ico_for_the_goods"
+        android:text="@string/for_the_goods"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent" />
+    <TextView
+        android:id="@+id/tv_is_complete"
+        android:paddingTop="10dp"
+        android:textSize="12sp"
+        android:textColor="@color/c272936"
+        android:gravity="center"
+        android:drawableTop="@mipmap/ico_is_complete"
+        android:text="@string/has_been_completed"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

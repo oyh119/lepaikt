@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="28dp">
+    <ImageView
+        android:id="@+id/img_reduce_price"
+        android:layout_gravity="center_vertical"
+        android:scaleType="center"
+        android:src="@drawable/ico_reduce"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/edt_product_price"
+        android:inputType="number"
+        android:textColor="@color/c4c4c4c"
+        android:text="1000"
+        android:gravity="center"
+        android:layout_gravity="center_vertical"
+        android:background="@color/f6f6f6"
+        android:layout_marginLeft="12dp"
+        android:layout_width="72dp"
+        android:layout_height="match_parent" />
+    <ImageView
+        android:id="@+id/img_plus_price"
+        android:layout_marginLeft="12dp"
+        android:scaleType="center"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/ico_plus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>

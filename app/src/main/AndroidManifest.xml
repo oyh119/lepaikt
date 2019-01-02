@@ -21,12 +21,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".business.activity.LoginActivity"
-            android:launchMode="singleTask" />
         <activity android:name=".business.activity.RegisterActivity" />
         <activity android:name=".business.activity.HomePageActivity" />
-        <activity android:name=".business.activity.ProductIsAuctionDetailActivity"></activity>
+        <activity android:name=".business.activity.ProductIsAuctionDetailActivity" />
+        <activity android:name=".business.activity.OrderMainActivity"/>
     </application>
 
 </manifest>

@@ -20,4 +20,7 @@ abstract class InitActivityBuilder {
     @ContributesAndroidInjector(modules = [(ProductIsAuctionDetailModule::class)])
     abstract fun contributeProductIsAuctionDetailActivity() : ProductIsAuctionDetailActivity
 
+    @ContributesAndroidInjector(modules = [(OrderMainModule::class)])
+    abstract fun contributeOrderMainActivity() : OrderMainActivity
+
 }

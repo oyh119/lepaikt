@@ -1,5 +1,6 @@
 package com.leatien.lepaikt.business.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.view.ViewPager
 import com.flyco.tablayout.listener.OnTabSelectListener
@@ -70,9 +71,14 @@ class HomePageActivity : BaseMvpActivity(), HomePageContract.View {
             }
 
             override fun onTabReselect(position: Int) {
-
             }
 
         })
+        bottomView.setItemSelectCallBack {
+            when(it){
+                0 -> return@setItemSelectCallBack
+                1 -> startActivity(Intent(this,OrderMainActivity::class.java))
+            }
+        }
     }
 }

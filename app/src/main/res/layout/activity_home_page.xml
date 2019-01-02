@@ -145,7 +145,7 @@
         android:layout_height="wrap_content">
 
         <com.leatien.lepaikt.customview.BaseBottomView
-            android:id="@+id/base_bt_view"
+            android:id="@+id/bottomView"
             app:firstSelectIcon="@mipmap/ico_home_unselect"
             app:firstUnSelectIcon="@mipmap/ico_home_select"
             app:secondSelectIcon="@mipmap/ico_speech_unselect"

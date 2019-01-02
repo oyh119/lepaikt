@@ -70,7 +70,7 @@ class ProductIsAuctionDetailActivity : BaseMvpActivity(), ProductIsAuctionDetail
      * @param view 指定的view
      * @return 是否显示
      */
-    fun isViewCovered(view: View): Boolean {
+    private fun isViewCovered(view: View): Boolean {
         var currentView = view
 
         val currentViewRect = Rect()
@@ -105,8 +105,7 @@ class ProductIsAuctionDetailActivity : BaseMvpActivity(), ProductIsAuctionDetail
     }
 
     private fun indexOfViewInParent(view: View, parent: ViewGroup): Int {
-        var index: Int
-        index = 0
+        var index = 0
         while (index < parent.childCount) {
             if (parent.getChildAt(index) === view)
                 break
